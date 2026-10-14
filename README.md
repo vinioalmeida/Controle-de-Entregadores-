@@ -11,9 +11,3 @@ O QR guarda um token aleatório gerado para cada unidade ativa cadastrada no adm
 ## Teste local
 
 Abra o frontend em `http://localhost:3000` e permita localização. No Chrome, use DevTools > More tools > Sensors para simular coordenadas dentro e fora do raio da unidade. Para testar a leitura real, mostre a página `/qr` em outra tela ou imprima o código. Em celular, câmera e geolocalização exigem HTTPS; HTTP em endereço IP da rede local não é suficiente.
-
-## Acesso pelo celular na rede Wi-Fi
-
-Conecte computador e celular à mesma rede. Inicie o Flask com `python backend/app.py` e o Next.js com `cd frontend; npm run dev`. No celular, abra `http://10.10.0.104:3000`. Se o IP do computador mudar, atualize `allowedDevOrigins` em `frontend/next.config.mjs` e reinicie o Next.js.
-
-O encaminhamento `/backend` mantém API e imagens no mesmo host do site. Ainda assim, a câmera e a geolocalização do navegador móvel exigem HTTPS; em HTTP pelo IP local, use `http://localhost:3000` para teste no próprio computador ou configure um túnel HTTPS para teste no celular.
